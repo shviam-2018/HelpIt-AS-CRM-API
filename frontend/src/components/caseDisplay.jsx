@@ -27,15 +27,11 @@ export function CaseDisplay() {
   // State to store any error messages
   const [error, setError] = useState(null);
 
-  /**
-   * Effect hook to fetch cases on component mount
-   * Runs once when the component is first rendered
-   */
+  // Effect hook to fetch cases on component mount
+  // Runs once when the component is first rendered
   useEffect(() => {
-    /**
-     * Fetches all cases from the API
-     * Updates the cases state on success or error state on failure
-     */
+    // Fetches all cases from the API
+    // Updates the cases state on success or error state on failure
     const fetchCases = async () => {
       setLoading(true);
       try {
