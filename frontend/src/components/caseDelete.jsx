@@ -49,7 +49,8 @@ export function CaseDelete() {
                         type="number" 
                         placeholder="Case ID"
                         value={caseId} 
-                        onChange={(e) => setCaseId(e.target.value)} 
+                        onChange={(e) => setCaseId(e.target.value)}
+                        className="id-input" 
                     />
                     <button 
                         onClick={removeCase} 
