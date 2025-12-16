@@ -3,7 +3,6 @@ import { CaseDisplay } from './caseDisplay'
 import { PutCaseById } from './PutCaseById.jsx'
 import { CreateCase } from './createCase.jsx'
 import { CaseDelete } from './caseDelete.jsx'
-import CaseSearch from './caseSearch.jsx'
 
 /**
  * Dashboard Component - Main system overview and control center
@@ -89,12 +88,6 @@ export default function Dashboard() {
         <section>
           <h2>Create New Case</h2>
           <CreateCase />
-        </section>
-
-        {/* Search section - Find specific case by ID */}
-        <section>
-          <h2>Search Case</h2>
-          <CaseSearch />
         </section>
 
         {/* Delete section - Remove case from system */}

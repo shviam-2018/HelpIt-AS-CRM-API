@@ -7,7 +7,6 @@ import { CaseDisplay } from './components/caseDisplay'
 import { PutCaseById } from './components/PutCaseById.jsx'
 import { CreateCase } from './components/createCase.jsx'
 import { CaseDelete } from './components/caseDelete.jsx'
-import CaseSearch from './components/caseSearch.jsx'
 import './App.css'
 
 /**
@@ -36,7 +35,6 @@ function App() {
             
             {/* Individual page routes */}
             <Route path="/create" element={<CreateCase />} />
-            <Route path="/search" element={<CaseSearch />} />
             <Route path="/display" element={<CaseDisplay />} />
             
             {/* Update case - supports direct navigation with case ID */}
