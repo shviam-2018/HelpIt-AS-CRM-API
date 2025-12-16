@@ -1,406 +1,63 @@
-/* Theme variables */
+/* ============================================
+   HelpIt CRM - Theme Variables & Colors
+   ============================================ */
+
+/* Light Theme (Default) */
 :root {
-  --bg: #f5f7fb;
+  --bg: #f9fafb;
   --card-bg: #ffffff;
-  --text: #0b0b0b;
-  --muted: #1f1f1f;
-  --border: #e2e8f0;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --pill-bg: #e2e8f0;
-  --pill-text: #0b0b0b;
+  --pill-bg: #f3f4f6;
+  --pill-text: #374151;
   --input-bg: #ffffff;
-  --input-border: #cbd5e1;
+  --input-border: #d1d5db;
   --option-bg: #ffffff;
-  --option-text: #0b0b0b;
+  --option-text: #111827;
   --primary: #6366f1;
   --primary-hover: #4f46e5;
   --primary-text: #ffffff;
   --error-bg: #fef2f2;
-  --error-text: #7f1d1d;
-  --success-bg: #ecfdf3;
-  --success-text: #14532d;
+  --error-text: #991b1b;
+  --success-bg: #ecfdf5;
+  --success-text: #065f46;
 }
 
+/* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0f172a;
-    --card-bg: #111827;
-    --text: #f8fafc;
-    --muted: #e2e8f0;
-    --border: #1f2937;
+    --card-bg: #1e293b;
+    --text: #f1f5f9;
+    --muted: #cbd5e1;
+    --border: #334155;
     --shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    --pill-bg: #1f2937;
-    --pill-text: #e5e7eb;
-    --input-bg: #0b1220;
-    --input-border: #334155;
-    --option-bg: #0b1220;
-    --option-text: #e5e7eb;
+    --pill-bg: #334155;
+    --pill-text: #e2e8f0;
+    --input-bg: #0f172a;
+    --input-border: #475569;
+    --option-bg: #1e293b;
+    --option-text: #f1f5f9;
     --primary: #818cf8;
     --primary-hover: #6366f1;
-    --primary-text: #0b1220;
-    --error-bg: #3f1d2e;
-    --error-text: #fecdd3;
-    --success-bg: #12251a;
-    --success-text: #bbf7d0;
+    --primary-text: #0f172a;
+    --error-bg: #7f1d1d;
+    --error-text: #fca5a5;
+    --success-bg: #064e3b;
+    --success-text: #86efac;
   }
 }
 
-.stat-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-}
-
-.stat-title {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.stat-value {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-h1, h3 {
+/* Base Typography & Headings */
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
-}
-
-.overviewOfCase,
-.caseDetail {
-  width: min(1100px, 92vw);
-  margin: 1rem auto;
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}
-
-.overviewOfCase h1,
-.caseDetail h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.75rem;
-}
-
-/* Cases table-like list */
-.case-table-card {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}
-
-.case-table-title { font-size: 1.1rem; margin: 0 0 0.75rem 0; }
-
-.case-table { list-style: none; padding-left: 0; margin: 0; display: grid; gap: 0.5rem; }
-
-.case-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 0.5rem 1rem;
-  align-items: center;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.75rem 0.9rem;
-  font-size: 0.95rem;
-  color: var(--text);
-}
-
-@media (max-width: 720px) {
-  .case-row { grid-template-columns: 1fr; }
-}
-
-.caseTitle { font-weight: 700; color: var(--text); }
-
-.casePriority,
-.caseStatus {
-  font-size: 0.85rem;
   font-weight: 600;
-  padding: 0.1rem 0.5rem;
-  border-radius: 999px;
-  background: var(--pill-bg);
-  color: var(--pill-text);
-}
-
-.caseTitle {
-  font-weight: 700;
   color: var(--text);
 }
 
-.casePriority,
-.caseStatus {
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.1rem 0.5rem;
-  border-radius: 999px;
-  background: var(--pill-bg);
-  color: var(--pill-text);
-}
-
-/* Case edit layout */
-.case-edit-wrapper {
-  margin: 0;
-  width: 100%;
-  max-width: 1000px;
-  color: var(--text);
-}
-
-.case-edit-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  color: var(--text);
-  box-shadow: var(--shadow);
-}
-
-.case-edit-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.case-edit-header h3 {
-  font-size: 1.25rem;
-  color: var(--text);
-}
-
-.muted {
-  margin: 0.25rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.id-input-group {
-  display: flex;
-  gap: 0.75rem;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-.id-input {
-  flex: 1;
-  min-width: 180px;
-  padding: 0.75rem;
-  border: 1px solid var(--input-border);
-  background: var(--input-bg);
-  color: var(--text);
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.case-edit-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.field-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  align-items: start;
-}
-
-@media (max-width: 840px) {
-  .field-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--text);
-}
-
-.field span {
-  font-weight: 500;
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--input-border);
-  border-radius: 8px;
-  font-size: 1rem;
-  background: var(--input-bg);
-  color: var(--text);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
-  color: var(--muted);
-}
-
-.field select option {
-  background: var(--option-bg);
-  color: var(--option-text);
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-}
-
-.field textarea {
-  resize: vertical;
-}
-
-.field-full {
-  grid-column: 1 / -1;
-}
-
-.form-actions {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.primary-button {
-  padding: 0.8rem 1.4rem;
-  background: var(--primary);
-  color: var(--primary-text);
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.primary-button:hover {
-  background: var(--primary-hover);
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
-  transform: translateY(-1px);
-}
-
-.primary-button:disabled {
-  background: #cbd5e1;
-  color: #4b5563;
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
-}
-
-.ghost-button {
-  padding: 0.8rem 1.2rem;
-  background: var(--card-bg);
-  color: var(--text);
-  border: 1px solid var(--input-border);
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.ghost-button:hover {
-  background: var(--pill-bg);
-  border-color: var(--border);
-}
-
-.error-message,
-.success-message,
-.empty-state {
-  padding: 0.75rem 0.9rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-}
-
-.error-message {
-  background: var(--error-bg);
-  color: var(--error-text);
-  border: 1px solid var(--error-text);
-}
-
-.success-message {
-  background: var(--success-bg);
-  color: var(--success-text);
-  border: 1px solid var(--success-text);
-}
-
-.empty-state {
-  background: var(--card-bg);
-  color: var(--muted);
-  border: 1px dashed var(--border);
-}
-
-.loading {
-  color: #475569;
-  padding: 0.5rem 0;
-}
-
-@media (max-width: 720px) {
-  .case-edit-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .id-input-group {
-    width: 100%;
-  }
-
-  .id-input {
-    flex: 1;
-  }
-
-  .overviewOfCase,
-  .caseDetail {
-    width: 94vw;
-  }
-}
-
-@media (max-width: 520px) {
-  .overviewOfCase,
-  .caseDetail {
-    width: 96vw;
-    margin: 0.75rem auto;
-    padding: 1rem;
-  }
-
-  .case-edit-card {
-    padding: 1rem;
-  }
-
-  .id-input-group {
-    flex-direction: column;
-  }
-
-  .id-input,
-  .primary-button {
-    width: 100%;
-  }
-
-  .form-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .primary-button,
-  .ghost-button {
-    width: 100%;
-    text-align: center;
-  }
-}
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.1rem; }

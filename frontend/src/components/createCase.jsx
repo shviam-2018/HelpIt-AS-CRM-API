@@ -2,7 +2,17 @@ import { useState, useEffect } from "react";
 
 const baseUrl = "http://localhost:3000/api/v1/cases";
 
+/**
+ * CreateCase Component - Create a new support case
+ * 
+ * Features:
+ * - Form to input all case details
+ * - Submit new case to API
+ * - Auto-clear form on successful creation
+ * - Error handling and feedback
+ */
 export function CreateCase() {
+  // Form field states
   const [caseStatus, setCaseStatus] = useState("");
   const [priority, setPriority] = useState("");
   const [owner, setOwner] = useState("");
@@ -11,6 +21,8 @@ export function CreateCase() {
   const [date, setDate] = useState("");
   const [customer, setCustomer] = useState("");
   const [caseNumber, setCaseNumber] = useState("");
+  
+  // UI state
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
 
@@ -18,11 +30,17 @@ export function CreateCase() {
     // Component mounted - can add initialization logic here if needed
   }, []);
 
+  /**
+   * Handle form submission - Create new case
+   * Collects all form values and sends to API
+   * Clears form on success and shows confirmation
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSaving(true);
     setError(null);
     try {
+      // Build request body with all form fields
       const body = {
         status: caseStatus,
         priority,
@@ -33,6 +51,7 @@ export function CreateCase() {
         customer,
         caseNumber,
       };
+      // Send POST request to create case
       const res = await fetch(baseUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
